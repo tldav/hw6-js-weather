@@ -12,6 +12,10 @@ li {
 	padding-top: 15px;
 }
 
+#weather-stage {
+	border: 1px solid lightgray;
+}
+
 /* #search-button {
 	height: 100%;
 } */
