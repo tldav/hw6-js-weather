@@ -7,6 +7,9 @@ header {
 	border-bottom: black solid 3px;
 }
 
+ul {
+	padding-left: 0;
+}
 li {
 	list-style-type: none;
 	padding-top: 15px;
@@ -16,6 +19,10 @@ li {
 	border: 1px solid lightgray;
 }
 
-/* #search-button {
+#search-button {
 	height: 100%;
-} */
+}
+
+.forecast-end {
+	margin-bottom: 0;
+}
