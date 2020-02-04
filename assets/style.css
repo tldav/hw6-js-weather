@@ -26,3 +26,7 @@ li {
 .forecast-end {
 	margin-bottom: 0;
 }
+
+.hidden {
+	display: none;
+}
