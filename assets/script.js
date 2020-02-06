@@ -9,6 +9,7 @@ $hCurrent = $("#h-li");
 $wCurrent = $("#w-li");
 $uCurrent = $("#u-li");
 $weatherIcon = $("#icon");
+$forecastStage = $("#forecast-stage");
 
 // API Variables
 var apiKey = "&appId=a9ef19731f63676098dba0a6b2b8502e";
@@ -62,6 +63,7 @@ $searchBtn.on("click", function() {
 	// Displays the weather
 	$weatherStage.removeClass("hidden");
 	forecast();
+	$searchInput.val("");
 });
 
 function forecast() {
@@ -69,7 +71,19 @@ function forecast() {
 		url: forecastUrl + queryCity + apiKey,
 		method: "GET"
 	}).then(function(response) {
-		queryCity = $searchInput.val();
-		console.log(response);
+		console.log(response.list[3]);
+		console.log(response.list[11]);
+		console.log(response.list[19]);
+		console.log(response.list[27]);
+		console.log(response.list[35]);
 	});
+	$forecastStage.removeClass("hidden");
 }
+
+/*******
+ * 3 is noon
+ * 11 is noon
+ * 19 is noon
+ * 27 is noon
+ * 35 is noon
+ */
