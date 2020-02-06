@@ -2,8 +2,8 @@
 $cityDisplay = $("#city-name");
 $searchBtn = $("#search-button");
 $searchInput = $("#search-input");
+$searchList = $(".list-group");
 $weatherStage = $("#weather-stage");
-$weatherUl = $("#weather-ul");
 $tCurrent = $("#t-li");
 $hCurrent = $("#h-li");
 $wCurrent = $("#w-li");
@@ -67,6 +67,9 @@ $searchBtn.on("click", function() {
 });
 
 function forecast() {
+	// Removes forecast of prior searches
+	$forecastStage.empty();
+
 	$.ajax({
 		url: forecastUrl + queryCity + apiKey,
 		method: "GET"
