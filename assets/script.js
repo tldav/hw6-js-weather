@@ -71,11 +71,25 @@ function forecast() {
 		url: forecastUrl + queryCity + apiKey,
 		method: "GET"
 	}).then(function(response) {
-		console.log(response.list[3]);
-		console.log(response.list[11]);
-		console.log(response.list[19]);
-		console.log(response.list[27]);
-		console.log(response.list[35]);
+		// console.log(response.list[3]);
+		// console.log(response.list[11]);
+		// console.log(response.list[19]);
+		// console.log(response.list[27]);
+		// console.log(response.list[35]);
+
+		console.log(response.list);
+
+		var day1 = response.list[3];
+		var day2 = response.list[11];
+		var day3 = response.list[19];
+		var day4 = response.list[27];
+		var day5 = response.list[35];
+
+		for (var i = 0; i < response.list.length; i++) {
+			if (i && i % 5 === 0) {
+				console.log(i);
+			}
+		}
 	});
 	$forecastStage.removeClass("hidden");
 }
