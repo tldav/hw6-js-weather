@@ -63,6 +63,12 @@ $searchBtn.on("click", function() {
 	// Displays the weather
 	$weatherStage.removeClass("hidden");
 	forecast();
+
+	var createList = $("<a>")
+		.attr("href", "#")
+		.addClass("list-group-item list-group-item-action")
+		.text(queryCity);
+	$searchList.append(createList);
 	$searchInput.val("");
 });
 
