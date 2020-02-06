@@ -71,34 +71,36 @@ function forecast() {
 		url: forecastUrl + queryCity + apiKey,
 		method: "GET"
 	}).then(function(response) {
-		// console.log(response.list[3]);
-		// console.log(response.list[11]);
-		// console.log(response.list[19]);
-		// console.log(response.list[27]);
-		// console.log(response.list[35]);
+		var forecast = response.list;
+		// loops through the results
+		for (var i = 0; i < forecast.length; i++) {
+			var day = String(forecast[i].dt_txt.split(" ")[0]);
+			var temperature = (forecast[i].main.temp - 273.15) * 1.8 + 32;
+			temperature = Math.floor(temperature);
+			var humidity = forecast[i].main.humidity;
+			var iconCode = forecast[i].weather[0].icon;
+			var iconUrl =
+				"http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
 
-		console.log(response.list);
+			// only grabs forecast results with a time of noon
+			var hour = forecast[i].dt_txt.split("-")[2].split(" ")[1];
 
-		var day1 = response.list[3];
-		var day2 = response.list[11];
-		var day3 = response.list[19];
-		var day4 = response.list[27];
-		var day5 = response.list[35];
-
-		for (var i = 0; i < response.list.length; i++) {
-			var hour = response.list[i].dt_txt.split("-")[2].split(" ")[1];
 			if (hour === "12:00:00") {
-				console.log(i);
+				console.log(day);
+				console.log(humidity);
+				console.log(forecast);
+				console.log(iconUrl);
 			}
 		}
 	});
-	$forecastStage.removeClass("hidden");
 }
 
-/*******
- * 3 is noon
- * 11 is noon
- * 19 is noon
- * 27 is noon
- * 35 is noon
- */
+{
+	/* <div class="col-6 col-lg-2">
+							<div class="card bg-primary text-white p-2">
+								<h5>1/1/20</h5>
+								<p>Temp:</p>
+								<p>Humidity:</p>
+							</div>
+						</div> */
+}
