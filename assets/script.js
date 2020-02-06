@@ -86,7 +86,8 @@ function forecast() {
 		var day5 = response.list[35];
 
 		for (var i = 0; i < response.list.length; i++) {
-			if (i && i % 5 === 0) {
+			var hour = response.list[i].dt_txt.split("-")[2].split(" ")[1];
+			if (hour === "12:00:00") {
 				console.log(i);
 			}
 		}
