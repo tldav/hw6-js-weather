@@ -86,21 +86,29 @@ function forecast() {
 			var hour = forecast[i].dt_txt.split("-")[2].split(" ")[1];
 
 			if (hour === "12:00:00") {
-				console.log(day);
-				console.log(humidity);
-				console.log(forecast);
-				console.log(iconUrl);
+				var forecastDiv = $("<div>").addClass("col-6 col-lg-2");
+				var cardDiv = $("<div>").addClass(
+					"card bg-primary text-white p-2"
+				);
+				var forecastDate = $("<h5>").text(day);
+				var iconImg = $("<img>").attr("src", iconUrl);
+				var forecastTemp = $("<p>").text(
+					"Temp: " + temperature + " \u00B0F"
+				);
+				var forecastHumidity = $("<p>").text(
+					"Humidity: " + humidity + "%"
+				);
+
+				cardDiv.append(
+					forecastDate,
+					iconImg,
+					forecastTemp,
+					forecastHumidity
+				);
+				forecastDiv.append(cardDiv);
+				$forecastStage.append(forecastDiv);
 			}
 		}
+		$forecastStage.removeClass("hidden");
 	});
-}
-
-{
-	/* <div class="col-6 col-lg-2">
-							<div class="card bg-primary text-white p-2">
-								<h5>1/1/20</h5>
-								<p>Temp:</p>
-								<p>Humidity:</p>
-							</div>
-						</div> */
 }
