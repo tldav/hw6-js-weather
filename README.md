@@ -1,4 +1,4 @@
-# hw6-js-weather
+# weather-dashboard
 
 Weather Dashboard
 
@@ -8,6 +8,6 @@ After the user inputs a city name, the city name and current date are displayed.
 
 Using a seperate API data collection from Open Weather allows the user access to the 5 day forecast for the city that was searched. The forecast dates, temperature, and humidity are displayed to the user in addition to the current weather.
 
-The deployed application can be found at (https://tldav.github.io/hw6-js-weather/)
+The deployed application can be found at https://tldav.github.io/hw6-js-weather/
 
 ![Weather Dashboard](/assets/weather-dashboard.PNG)
